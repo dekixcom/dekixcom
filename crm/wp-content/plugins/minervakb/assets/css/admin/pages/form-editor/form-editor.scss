@@ -1,0 +1,259 @@
+#mkb-form-editor {
+    margin-right: 1.4em;
+    max-width: 98em;
+    background: #fff;
+    padding: 3em 2em;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+/**
+ * Toastr
+ */
+#toast-container {
+    &.toast-top-right {
+        top: 50px;
+        right: 1.2em;
+    }
+}
+
+#mkb-form-editor-tabs,
+.mkb-form-editor-settings-tabs {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    li {
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            padding: 1em;
+            display: inline-block;
+            outline: none;
+            box-shadow: none;
+
+            &.state--active {
+                font-weight: 600;
+                color: #555;
+                cursor: default;
+            }
+        }
+    }
+}
+
+#mkb-form-editor-tabs {
+    background: #fff;
+    margin: 0 0.8em 2em 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+
+    li {
+        a {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.mkb-form-editor-settings-tabs {
+    margin: 0;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.mkb-form-editor-tab-content,
+.mkb-form-settings-tab {
+    display: none;
+
+    &.state--active {
+        display: block;
+    }
+}
+
+.mkb-form-settings-tab {
+    padding: 1em 1.5em 2em 1.2em;
+    min-width: 25em;
+}
+
+.mkb-row-settings-form {
+    .mkb-no-row-message {
+        display: none;
+    }
+
+    &.state--no-row {
+        .mkb-no-row-message {
+            display: block;
+        }
+
+        :not(.mkb-no-row-message) {
+            display: none;
+        }
+    }
+}
+
+.mkb-field-settings-form {
+    .mkb-no-field-message {
+        display: none;
+    }
+
+    &.state--no-field {
+        .mkb-no-field-message {
+            display: block;
+        }
+
+        .mkb-field-setting {
+            display: none;
+        }
+    }
+}
+
+.mkb-form-editor-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mkb-form-editor-settings-container {
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 0;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.12);
+
+    .mkb-form {
+        width: 25em;
+    }
+}
+
+.mkb-form--editable {
+    width: 580px;
+    padding: 1.2em 1em;
+    border: 2px dashed cornflowerblue;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.mkb-form-editor-row {
+    padding: 1em 3em 1em 3em;
+    border: 2px dashed #d5dadf;
+    margin: 0 0 1em;
+
+    &.state--selected {
+        background: #f5f7f9;
+        border: 2px solid #d5dadf;
+    }
+
+    &:hover,
+    &.sortable-drag {
+        background: #f5f7f9;
+    }
+}
+
+.mkb-form-columns__2col {
+    display: flex;
+    justify-content: space-between;
+
+    .mkb-form-column {
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.mkb-form-editor-cell {
+    display: block;
+
+    &.mkb-drop-highlight {
+        background: cornflowerblue!important;
+    }
+}
+
+.mkb-form-editor-item {
+    display: block;
+    padding: 1.5em;
+    border: 2px dashed forestgreen;
+    background: #fff;
+    //border-radius: 6px;
+
+    &:hover {
+        background: #eef7e3;
+    }
+
+    &.mkb-drop-highlight {
+        background: #c7f7a6;
+    }
+
+    &.state--selected {
+        border: 2px solid forestgreen;
+        background: #eef7e3;
+    }
+}
+
+.mkb-form-editor-insert-item {
+    display: block;
+    text-align: center;
+    padding: 2em;
+    color: #555;
+    border: 2px dashed cornflowerblue;
+    cursor: pointer;
+
+    i {
+        margin-right: 0.5em;
+    }
+
+    &.mkb-drop-highlight {
+        background: #c7f7a6;
+    }
+
+    &:hover {
+        background: #d1f1ff;
+    }
+}
+
+.mkb-field-required-dot {
+    margin-left: 0.5em;
+}
+
+.mkb-field-validation-errors {
+    color: red;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin: 0.3em 0 0.7em;
+}
+
+.mkb-form-editor-insert-field-selector {
+    position: relative;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0.7em;
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0.5em 0.8em;
+            border: 1px solid;
+            margin-right: 0.5em;
+            text-decoration: none;
+            border-radius: 4px;
+
+            i {
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    &.state--loading {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: rgba(255,255,255,0.5);
+        }
+    }
+}

@@ -1,0 +1,115 @@
+#mkb-permissions {
+    margin-right: 1.4em;
+    max-width: 98em;
+    background: #fff;
+    padding: 3em 2em;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .mkb-admin-alert {
+        width: 60em;
+        max-width: 100%;
+    }
+}
+
+.mkb-caps-unfold-all {
+    .mkb-caps-unfold-open {
+        display: none;
+    }
+
+    &.state--open {
+        .mkb-caps-unfold-closed {
+            display: none;
+        }
+
+        .mkb-caps-unfold-open {
+            display: inline;
+        }
+    }
+}
+
+.mkb-caps-edit-wrap {
+    padding: 1em 2em;
+    width: 60em;
+    max-width: 100%;
+    margin: 1em 0 0;
+    border-radius: 6px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.12);
+    background: #f7f7f7;
+}
+
+.mkb-caps-edit-group {
+    h3 {
+        color: #888;
+        font-size: 1.1rem;
+        font-weight: normal;
+        padding-left: 0.5em;
+        margin-bottom: 0.8em;
+        cursor: pointer;
+        transition: all 0.1s linear;
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    .mkb-caps-edit-group-icon {
+        width: 1.2em;
+        text-align: left;
+    }
+
+    &.state--open {
+        h3 {
+            color: #333;
+        }
+
+        .mkb-caps-edit-group-unfold-icon {
+            transform: rotateZ(90deg);
+        }
+    }
+}
+
+.mkb-caps-edit-group-items {
+    display: none;
+
+    .mkb-caps-edit-group.state--open & {
+        display: block;
+        margin-bottom: 1em;
+    }
+}
+
+.mkb-edit-caps-toggle-row {
+    padding: 0 0 0.5em 0.8em;
+    color: #777;
+
+    label {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.mkb-edit-caps-row {
+    position: relative;
+    padding: 0.8em;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.2);
+
+    &:not(:last-child) {
+        border-bottom: none;
+    }
+
+    label {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 1.8em;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        top: .8em;
+        left: .62em;
+        margin: 0;
+    }
+}
